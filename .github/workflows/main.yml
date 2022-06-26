@@ -60,7 +60,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SECRET_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }} 
           script: |
             # Выполняет pull образа с DockerHub
@@ -68,4 +68,4 @@ jobs:
             #остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 5000:5000 munkushi1/infra_actions
-            # comment for fix error
+            

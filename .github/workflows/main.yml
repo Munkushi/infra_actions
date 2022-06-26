@@ -63,9 +63,7 @@ jobs:
           key: ${{ secrets.SECRET_SSH }}
           passphrase: ${{ secrets.PASSPHRASE }} 
           script: |
-            # Выполняет pull образа с DockerHub
             sudo docker pull munkushi1/infra_actions
-            #остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 5000:5000 munkushi1/infra_actions
   send_message:
@@ -78,4 +76,4 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: ${{ github.workflow }} успешно выполнен! 
-        # 
+        

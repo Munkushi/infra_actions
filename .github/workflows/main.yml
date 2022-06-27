@@ -50,7 +50,7 @@ jobs:
           uses: docker/build-push-action@v2 
           with:
             push: true
-            tags: munkushi/infra_new:latest 
+            tags: munkushi/infra_actions:latest 
   deploy:
       runs-on: ubuntu-latest
       needs: build_and_push_to_docker_hub
